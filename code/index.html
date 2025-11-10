@@ -1,17 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Business Site</title>
-    <!-- Don't forget to link the CSS file here! -->
-  </head>
-  <body>
-    <h1>Business name 🌻</h1>
+<html lang="en">
 
-    <!-- Video or image as a header is cool :) -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roman Tour</title>
+  <meta name="description" content="Small-group after-hours Colosseum access. Reserve your place in minutes." />
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <!-- Signup form -->
+<body>
 
-  </body>
+  <!-- Skip link for keyboard users -->
+  <a class="visually-hidden" href="#signup">Skip to signup form</a>
+
+  <header class="hero" role="banner">
+    <div class="hero-media" aria-hidden="true">
+      <video class="video-desktop" autoplay muted loop playsinline preload="metadata">
+        <source src="colosseo-desktop.mp4" type="video/mp4" />
+      </video>
+      <video class="video-mobile" autoplay muted loop playsinline preload="metadata">
+        <source src="./assets/colosseo_pexels.mp4" type="video/mp4" />
+      </video>
+      <div class="overlay" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-content container">
+      <p class="eyebrow">Limited spots • Exclusive access</p>
+      <h1>Roman Tour Signup</h1>
+      <p>Small-group exclusive access. Reserve your place in minutes.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="container" id="signup" aria-labelledby="signup-title">
+      <div class="card" role="region" aria-labelledby="signup-title">
+        <h2 id="signup-title">Sign up for the Roman Tour</h2>
+
+        <form action="https://httpbin.org/anything" method="post" target="_blank" autocomplete="on">
+          <div class="form-grid">
+            <label for="name">Name:</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+        
+            <label for="email">Email:</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+        
+            <label for="guests">Number of guests:</label>
+            <input id="guests" name="guests" type="number" min="1" max="10" required />
+        
+            <label for="date">Preferred tour date:</label>
+            <input id="date" name="date" type="date" required />
+        
+            <fieldset>
+              <legend>Choose your tour time</legend>
+              <div class="options">
+                <label class="option">
+                  <input type="radio" name="timeslot" value="morning" required />
+                  Morning (9:00 AM)
+                </label>
+                <label class="option">
+                  <input type="radio" name="timeslot" value="afternoon" />
+                  Afternoon (2:00 PM)
+                </label>
+                <label class="option">
+                  <input type="radio" name="timeslot" value="evening" />
+                  Evening (8:00 PM)
+                </label>
+              </div>
+            </fieldset>
+        
+            <fieldset>
+              <legend>Which tours are you interested in?</legend>
+              <div class="options">
+                <label class="option"><input type="checkbox" name="interest" value="architecture" /> Ancient
+                  Architecture Tour</label>
+                <label class="option"><input type="checkbox" name="interest" value="food" /> Roman Food Tour</label>
+                <label class="option"><input type="checkbox" name="interest" value="parks" /> Roman Parks</label>
+              </div>
+            </fieldset>
+        
+            <label class="option" style="margin-top:1rem;">
+              <input type="checkbox" name="terms" value="agree" required />
+              I agree to the <a href="#" target="_blank" style="color:#1f2937;text-decoration:underline;">terms and
+                conditions</a>
+            </label>
+          </div>
+        
+          <button class="btn" type="submit">Reserve My Spot</button>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+</body>
+
 </html>
